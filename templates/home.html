@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class='weatherInCities'>
+        {% for city in cities %}
+            <a href="{% url 'city' city.name %}" class='cityWeatherCard'>
+                <h3>{{ city.name }}</h3>
+                <h4>{{ city.temperature }}</h4>
+            </a>
+        {% endfor %}
+
+    </div>
+
+    <div class='homeBody'>
+        <div class='homeCard'>
+            <h2>Your Current Location Weather</h2>
+            <div class='weatherRow'>
+                <span class='weatherLabel'>Latitude:</span>
+                <span class='weatherValue'><span id='latitude'></span></span>
+            </div>
+            <div class='weatherRow'>
+                <span class='weatherLabel'>Longitude:</span>
+                <span class='weatherValue'><span id='longitude'></span></span>
+            </div>
+            <div class='weatherRow'>
+                <span class='weatherLabel'>Temperature:</span>
+                <span class='weatherValue'><span id='temp'></span> °C</span>
+            </div>
+            <div class='weatherRow'>
+                <span class='weatherLabel'>Wind:</span>
+                <span class='weatherValue'><span id='windSpeed'></span> km/h</span>
+            </div>
+            <div class='weatherRow'>
+                <span class='weatherLabel'>Humidity:</span>
+                <span class='weatherValue'><span id='humidity'></span>%</span>
+            </div>
+            <div class='weatherRow'>
+                <span class='weatherLabel'>Cloud Cover:</span>
+                <span class='weatherValue'><span id='cloudCover'></span>%</span>
+            </div>
+            <div class='weatherRow'>
+                <span class='weatherLabel'>Precipitation:</span>
+                <span class='weatherValue'><span id='precipitation'></span> mm</span>
+            </div>
+        </div>
+        <div class='homeCard' id='globeImage'>
+        </div>
+    </div>
+
+{% endblock %}

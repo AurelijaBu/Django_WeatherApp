@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <form class='addCityForm' method='post' enctype='multipart/form-data'>
+        {% csrf_token %}
+        <h1>Enter the information of a new city</h1>
+        <div class='formCard'>
+            <label for='city'>City:</label>
+            <input type='text' name='city' id='city' placeholder='City name...'>
+        </div>
+        <div class='formCard'>
+            <label for='country'>Country:</label>
+            <input type='text' name='country' id='country' placeholder='Country name...'>
+        </div>
+        <div class='formCard'>
+            <label for='coordination_x'>Latitude:</label>
+            <input type='number' step='0.01' name='coordination_x' id='coordination_x' placeholder='E.g.: 54.41'>
+        </div>
+        <div class='formCard'>
+            <label for='coordination_y'>Longitude:</label>
+            <input type='number' step='0.01' name='coordination_y' id='coordination_y' placeholder='E.g.: 25.16'>
+        </div>
+        <div class='formCard'>
+            <label for='image'>City Image:</label>
+            <input type='file' name='image' id='image' accept='image/*'>
+        </div>
+        <div class='formCard'>
+            <input id='saveCityButton' type='submit' value='Save'>
+        </div>
+    </form>
+
+{% endblock %}

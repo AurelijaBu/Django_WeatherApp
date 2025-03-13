@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <div id='citiesMain'>
+        {% if cities %}
+            <div class='citiesBody'>
+                    {% for city in cities %}
+                        {% if city.image %}
+                            <a href="{% url 'city' city.name %}" class='cityCard' style="background-image: url('{{ city.image.url }}');">
+                                <h2>{{ city.name }}</h2>
+                            </a>
+                        {% else %}
+                            <a href="{% url 'city' city.name %}" class='cityCard'>
+                                <h2>{{ city.name }}</h2>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+            </div>
+        {% else %}
+            <p>No cities are available.</p>
+        {% endif %}
+        <div>
+            <a href="{% url 'add_city' %}">
+                <button id='addCityButton'>Add a new city</button>
+            </a>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% load static %}
+
+<a id='homeButton' href="{% url 'home' %}">
+    <img id='logo' src="{% static 'images/logo.png' %}" alt='Weather logo' >
+    <h2 class='homeTxt'>WeatherApp</h2>
+</a>
+<nav>
+    <a href="{% url 'cities' %}">Cities</a>
+    <a href="{% url 'weathers_data' %}">Weathers Data</a>
+</nav>

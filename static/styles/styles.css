@@ -1,0 +1,325 @@
+body{
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-color: rgb(229, 229, 229); */
+    background-color: rgba(0, 0, 0, 0.9); 
+    /* background-image: url(../images/ignalina.jpeg); */
+}
+
+a{
+    text-decoration: none;
+}
+
+#homeButton{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding-left: 0.5rem;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+}
+
+#logo{
+    width: 40px;
+}
+
+.homeTxt{
+    color: white;
+    padding-left: 0.5rem;
+}
+
+nav{
+    padding-right: 2rem;
+}
+
+nav > a{
+    color: white;
+    font-size: large;
+    padding: 0 1rem;
+}
+
+main{
+    margin: 0 auto;
+}
+
+.weatherInCities{
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    padding: 2rem 0;
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+    height: 25rem;
+    padding: 5rem;
+}
+
+.weatherInCities::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+}
+
+.cityWeatherCard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    padding: 1rem 2rem;
+    color: rgb(251, 251, 251);
+    border-radius: 20px;
+    height: 5rem;
+    max-width: 300px;
+}
+
+.citiesBody{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    padding: 2rem 5rem;
+}
+
+.cityCard{
+    width: 250px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cityCard:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+.citiesBody{
+    text-align: center;
+    width: 80%;
+}
+
+.cityCard h2{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.377);
+    margin: 0;
+    padding: 2.5rem;
+}
+
+.weathersNowTable{
+    background-color: rgb(51, 51, 51);
+    color: white;
+    margin: 5rem auto;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    max-width: 80%;
+}
+
+.weathersNowTable *{
+    padding: 1rem 3rem;
+    text-align: center;
+}
+
+.addCityForm, .updateCityForm{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 2rem;
+    width: 50rem;
+    background-color: rgb(51, 51, 51);
+    color: white;
+    margin: 3rem auto;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+}
+
+.formCard, .imageCard{
+    width: 400px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.imageCard{
+    justify-content: right;
+    padding: 0;
+    margin-left: 9rem;
+}
+
+.formCard *{
+    padding: 0.5rem;
+}
+
+#saveCityButton, #saveUpdateCityButton, #backToCitiesButton{
+    padding: 1rem;
+    background-color: black;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+    font-size: normal;
+}
+
+#saveCityButton{
+    width: 100%;
+
+}
+
+#saveUpdateCityButton, #backToCitiesButton{
+    width: 45%;
+}
+
+#saveUpdateCityButton{
+    font-size: 17px;
+}
+
+#citiesMain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#addCityButton{
+    margin: 2rem;
+    padding: 1rem 5rem;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: large;
+    font-weight: 700;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.253);
+    transition: all 0.3s ease;
+    /* margin-left: 12rem; */
+}
+
+.homeBody{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7rem;
+    margin: 5rem auto;
+}
+
+.homeCard{
+    color: rgba(255, 255, 255, 0.863);
+    border-radius: 20px;
+    width: 30%;
+}
+
+.homeCard > h2{
+    color: white;
+    text-align: center;
+}
+
+.cityBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 0 auto;
+    height: 100vh;
+    position: relative;
+}
+
+#cityButtons{
+    position: absolute;
+    display: flex;
+    top: 20px;
+    right: 20px;
+    transition: all 0.3s ease;
+}
+
+#deleteCityButton, #updateCityButton{
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 20px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin: 0 0.5rem;
+}
+
+#deleteCityButton:hover, #updateCityButton:hover, #saveCityButton:hover, #saveUpdateCityButton:hover, #backToCitiesButton:hover{
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+#addCityButton:hover{
+    transform: scale(1.05);
+}
+
+.weatherCard{
+    color: rgba(255, 255, 255, 0.863);
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    width: 30%;
+    padding: 2rem 4rem;
+}
+
+.weatherCard > h2{
+    color: white;
+    text-align: center;
+}
+
+.weatherRow{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.weatherLabel{
+    text-align: left;
+    font-weight: bold;
+}
+
+.weatherValue{
+    text-align: right;
+}
+
+#globeImage{
+    background-image: url(../images/globe.webp);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    position: relative;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%),
+                linear-gradient(to top, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%),
+                linear-gradient(to left, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%),
+                linear-gradient(to right, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+    mask-composite: intersect;
+    min-height: 400px;
+    min-width: 500px;
+}
+
+input{
+    border-radius: 20px;
+    text-align: center;
+}
+

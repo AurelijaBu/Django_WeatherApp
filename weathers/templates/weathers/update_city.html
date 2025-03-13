@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <form class='updateCityForm' method='post' enctype='multipart/form-data'>
+        {% csrf_token %}
+        <h1>Update the information as needed</h1>
+        <div class='formCard'>
+            <label for='city'>City:</label>
+            <input type='text' name='city' id='city' value='{{ city.name }}' required>
+        </div>
+        <div class='formCard'>
+            <label for='country'>Country:</label>
+            <input type='text' name='country' id='country' value='{{ city.country }}' required>
+        </div>
+        <div class='formCard'>
+            <label for='coordination_x'>Latitude:</label>
+            <input type='number' step='0.01' name='coordination_x' id='coordination_x' value='{{ city.coordination_x }}' required>
+        </div>
+        <div class='formCard'>
+            <label for='coordination_y'>Longitude:</label>
+            <input type='number' step='0.01' name='coordination_y' id='coordination_y' value='{{ city.coordination_y }}' required>
+        </div>
+        <div class='formCard'>
+            <label for='image'>Current Image:</label>
+            {% if city.image %}
+                <img src='{{ city.image.url }}' alt='Current image' width='150'>
+            {% else %}
+                <p>No image uploaded</p>
+            {% endif %}
+        </div>
+        <div class='imageCard'>
+            <input type='file' id='image' name='image'>
+        </div>
+        <div class='formCard'>
+            <input id='saveUpdateCityButton' type='submit' value='Update'>
+            <a id='backToCitiesButton' href="{% url 'cities' %}">Back to Cities</a>
+        </div>
+    </form>
+
+
+{% endblock %}

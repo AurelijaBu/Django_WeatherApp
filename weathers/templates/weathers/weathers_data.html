@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    {% if cities %}
+        <table class='weathersNowTable'>
+            <tr>
+                <th>Country</th>
+                <th>City</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Temperature</th>
+                <th>Date</th>
+            </tr>
+            {% for city_weather in cities %}
+                <tr>
+                    <td>{{ city_weather.city.country }}</td>
+                    <td>{{ city_weather.city.name }}</td>
+                    <td>{{ city_weather.city.coordination_x }}</td>
+                    <td>{{ city_weather.city.coordination_y }}</td>
+                    <td>{{ city_weather.temperature }}</td>
+                    <td>{{ city_weather.time_stamp }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No cities are available.</p>
+    {% endif %}
+{% endblock %}

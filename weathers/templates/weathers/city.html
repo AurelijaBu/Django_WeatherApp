@@ -1,0 +1,54 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    .cityBody {
+        {% if city.image %}
+            background: url('{{ city.image.url }}') no-repeat center center;
+            background-size: cover;
+        {% else %}
+            background-color: rgba(0, 0, 0, 0.9);
+        {% endif %}
+    }
+</style>
+
+<div class="cityBody">
+
+    <div id='cityButtons'>
+        <a href="{% url 'update_city' city.name %}">
+            <button id='updateCityButton'>Update City</button>
+        </a>
+        <form method='post' action="{% url 'delete_city' city.name %}">
+            {% csrf_token %}
+            <button id='deleteCityButton' type='submit' data-url="{% url 'delete_city' city.name %}">Delete City</button>
+        </form>
+    </div>
+
+    <div class='weatherCard'>
+        <h2>{{ city.name }} Weather</h2>
+        <div class='weatherRow'>
+            <span class='weatherLabel'>Temperature:</span>
+            <span class='weatherValue'>{{ weather.temperature }} °C</span>
+        </div>
+        <div class='weatherRow'>
+            <span class='weatherLabel'>Wind:</span>
+            <span class='weatherValue'>{{ weather.wind_speed }} km/h</span>
+        </div>
+        <div class='weatherRow'>
+            <span class='weatherLabel'>Humidity:</span>
+            <span class='weatherValue'>{{ weather.humidity }}%</span>
+        </div>
+        <div class='weatherRow'>
+            <span class='weatherLabel'>Cloud Cover:</span>
+            <span class='weatherValue'>{{ weather.cloud_cover }}%</span>
+        </div>
+        <div class='weatherRow'>
+            <span class='weatherLabel'>Precipitation:</span>
+            <span class='weatherValue'>{{ weather.precipitation }} mm</span>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
