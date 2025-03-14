@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from .views import home, get_weather_data_view
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cities/', include('weathers.urls')),
@@ -27,6 +28,8 @@ urlpatterns = [
     path('get_weather_data/', get_weather_data_view, name='get_weather_data'),
 ]
 
+
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

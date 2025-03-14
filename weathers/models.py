@@ -13,6 +13,7 @@ COUNTRY_CHOICES = {
     'Estija': 'Estija',
 }
 
+
 class City(BaseModel):
     name = models.CharField(max_length=50, blank=True, unique=True)
     country = models.CharField(max_length=100, default='Lietuva', choices=COUNTRY_CHOICES)

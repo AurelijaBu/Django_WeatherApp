@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import City, CityWeathers
 from project.views import get_weather_data
 
+
 def index(request):
     cities = City.objects.all()
     context = {'cities': cities}
