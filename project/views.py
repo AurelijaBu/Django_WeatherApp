@@ -5,6 +5,12 @@ from weathers.helper_functions.weathers import get_weather_data
 
 
 def home(request):
+    """
+    Renders the home page displaying a preview of the weather data for the first four cities.
+
+    :param request: HTTP request object.
+    :return: Rendered HTML page with weather data for up to four cities.
+    """
     cities = City.objects.all()
     for city in cities:
         weather_data = get_weather_data(city.coordination_x, city.coordination_y)
@@ -15,6 +21,12 @@ def home(request):
 
 
 def get_weather_data_view(request):
+    """
+    Returns current weather data for given latitude and longitude via GET request.
+
+    :param request: HTTP request object containing 'lat' and 'lon' parameters.
+    :return: JSON response with weather data or an error message if coordinates are missing.
+    """
     latitude = request.GET.get('lat')
     longitude = request.GET.get('lon')
 

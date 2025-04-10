@@ -7,6 +7,7 @@ class BaseModel(models.Model):
     class Meta:
         abstract = True
 
+
 COUNTRY_CHOICES = {
     'Lietuva': 'Lietuva',
     'Latvija': 'Latvija',
@@ -22,7 +23,7 @@ class City(BaseModel):
     image = models.ImageField(upload_to='city_images/', blank=True, null=True)
 
     def __str__(self):
-        return f'{self.name} in {self.country}, coordination: {self.coordination_x, self.coordination_y}'
+        return f'{self.name} in {self.country}, coordinates: {self.coordination_x, self.coordination_y}'
 
 
 class CityWeathers(BaseModel):
