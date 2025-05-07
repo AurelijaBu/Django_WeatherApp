@@ -2,6 +2,8 @@
 
 WeatherApp is a simple Django-based web application that allows users to get real-time weather information for any city in using the OpenWeather API.
 
+This application allows users to add, update, and delete cities using Django function-based views that handle HTTP GET and POST methods. All weather records are stored in the "Weathers Data" table for tracking historical data.
+
 ## A few visual snippets from the website
 
 ## Homepage:
