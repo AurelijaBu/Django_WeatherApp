@@ -2,6 +2,19 @@
 
 WeatherApp is a simple Django-based web application that allows users to get real-time weather information for any city in using the OpenWeather API.
 
+## A few visual snippets from the website
+
+## Homepage:
+  
+![Homepage snippet](page_visual/Homepage_snip.PNG)
+![Homepage2 snippet](page_visual/Homepage2_snip.PNG)
+
+## Cities existing in database:
+![Cities snippet](page_visual/Cities_snip.PNG)
+
+## Selected city weather:
+![City snippet](page_visual/City_snip.PNG)
+
 ## Tech Stack
 - Python
 - Django
@@ -67,15 +80,14 @@ Follow these steps to run the project locally:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YourUsername/WeatherApp.git
-cd WeatherApp
+git clone https://github.com/AurelijaBu/Django_WeatherApp.git
+cd Django_WeatherApp
 ```
 
 ### 2. Create a Virtual Environment
 
 ```bash
-git clone https://github.com/YourUsername/WeatherApp.git
-cd WeatherApp
+python -m venv venv
 ```
 
 ### 3. Activate the Virtual Environment
