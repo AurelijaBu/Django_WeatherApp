@@ -9,11 +9,11 @@ WeatherApp is a simple Django-based web application that allows users to get rea
 ![Homepage snippet](page_visual/Homepage_snip.PNG)
 ![Homepage2 snippet](page_visual/Homepage2_snip.PNG)
 
-## Cities added to database:
-![Cities snippet](page_visual/Cities.PNG)
+## Cities existing in database:
+![Cities snippet](page_visual/Cities_snip.PNG)
 
 ## Selected city weather:
-![City snippet](page_visual/City.PNG)
+![City snippet](page_visual/City_snip.PNG)
 
 ## Tech Stack
 - Python
